@@ -4,11 +4,11 @@
 //div onclick="newItem()" id="button"
 //ol id="list"
 
-
+let li = $('<li></li>');
 
 //add new item to list
 function newItem(){
-    let li = $('<li></li>');
+    
     let inputValue = $('#input').val();
     let text = li.append(inputValue);
 
@@ -19,4 +19,11 @@ function newItem(){
         list.append(text);
     }
 }
+
+//crossout item from list
+function crossOut(){
+    li.addClass("strike");
+}
+
+li.on("dblclick", crossOut);
 

@@ -4,11 +4,12 @@
 //div onclick="newItem()" id="button"
 //ol id="list"
 
-let li = $('<li> </li>');
+
+
 
 //add new item to list
 function newItem(){
-    // let li = $('<li></li>');
+    let li = $('<li> </li>');
     let inputValue = $('#input').val();
     let text = li.append(inputValue);
 
@@ -18,27 +19,29 @@ function newItem(){
         let list= $('#list');
         list.append(text);
     }
+
+    //crossout item from list
+    function crossOut(){
+        li.addClass("strike");
+    }  
+    li.on("dblclick", crossOut);
+
+
+    //add delete button "X"
+    let crossOutButton = $('<button class="crossOutButton">X</button>');
+    li.append(crossOutButton);
+
+    //delete item function
+    function deleteItem(){
+        li.addClass("delete");
+    }
+
+    crossOutButton.on("click", deleteItem);
+
+    //reordering item
+    $('#list').sortable();
+
 }
 
-//crossout item from list
-function crossOut(){
-    li.addClass("strike");
-}
-
-li.on("dblclick", crossOut);
-
-//add delete button "X"
-let crossOutButton = $('<button class="crossOutButton">X</button>');
-li.append(crossOutButton);
-
-//delete item function
-function deleteItem(){
-    li.addClass("delete");
-}
-
-crossOutButton.on("click", deleteItem);
-
-//reordering item
-$('#list').sortable();
 
 

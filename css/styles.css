@@ -42,7 +42,10 @@ ol li {padding: 5px;color:#000;}
 
 ol li:nth-child(even){background: #dfdfdf;}
 
-.strike{text-decoration: line-through;}
+.strike{
+	text-decoration: line-through;
+	color: red;
+}
 
 li:hover{
   cursor: pointer;

@@ -27,3 +27,16 @@ function crossOut(){
 
 li.on("dblclick", crossOut);
 
+//add delete button "X"
+let crossOutButton = $('<button class="crossOutButton">X</button>');
+li.append(crossOutButton);
+
+//delete item function
+function deleteItem(){
+    li.addClass("delete");
+}
+
+crossOutButton.on("click", deleteItem);
+
+
+
